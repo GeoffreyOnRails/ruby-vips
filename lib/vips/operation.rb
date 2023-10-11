@@ -222,6 +222,8 @@ module Vips
     end
 
     def build
+      puts "------------------------Appel à build-----------------------"
+      # binding.pry
       op = Vips.vips_cache_operation_build self
       if op.null?
         Vips.vips_object_unref_outputs self
@@ -480,6 +482,7 @@ module Vips
         end
       end
 
+      puts "--------------------------------- Appel à call--------------------------"
       op = op.build
 
       # attach all input refs to output x

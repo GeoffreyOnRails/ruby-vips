@@ -226,6 +226,7 @@ module Vips
     # @param name [String] vips operation to call
     # @return result of vips operation
     def method_missing name, *args, **options
+      puts "------------ Method_missing #{name}, with args : #{args} and options : #{options}"
       Vips::Operation.call name.to_s, [self, *args], options
     end
 
